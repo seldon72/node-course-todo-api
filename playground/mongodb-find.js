@@ -31,7 +31,7 @@ MongoClient.connect(url, (err, client) => {
     db.collection('Users').find({name: 'Dany'}).toArray().then((docs) => {
         console.log(JSON.stringify(docs, undefined, 4));
         client.close();
-    }, () => {
+    }, (err) => {
         console.log('Unable to fetch users');
     });
     
